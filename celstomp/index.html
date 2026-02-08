@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
   
   <title>ginyo's CELSTOMP</title>
-  <!-- icons -->
+  
   <link rel="icon" href="./icons/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
@@ -15,7 +15,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <meta name="theme-color" content="#000000">
 
-  <!-- CSS -->
+  
 <link rel="stylesheet" href="./celstomp-styles.css" />
 </head>
 
@@ -41,7 +41,7 @@
     </div>
   </header>
 
-  <!-- INFO_PANEL (unique anchor) -->
+  
   <div id="infoBackdrop" class="infoBackdrop" hidden></div>
 
   <aside id="infoPanel"
@@ -59,7 +59,7 @@
       </p>
 
       <div class="infoBtns">
-        <!-- Replace these hrefs with your real links -->
+        
         <a class="infoLinkBtn" href="https://ko-fi.com/ginyoa" target="_blank" rel="noopener">Support me on Kofi!</a>
         <a class="infoLinkBtn" href="https://instagram.com/ginyoagoldie" target="_blank" rel="noopener">Instagram</a>
         <a class="infoLinkBtn" href="https://x.com/ginyoagoldie" target="_blank" rel="noopener">Twitter</a>
@@ -91,11 +91,10 @@
   <div class="app">
     
 
-    <!-- STAGE -->
+    
     <main id="stageWrap">
       <div id="stage">
-         <!--<button class="chip" id="infoBtn">ℹ︎ Info</button>
--->
+         
         <div id="infoPanelLegacy" style="display:none;">
           <h3>CELSTOMP — Credits &amp; Info</h3>
           <p>A <em>cel</em> is treated as a group of its layers (Fill, Sketch, Color, Lineart). Holds and onion-skins operate at the cel level.</p>
@@ -130,7 +129,7 @@
       </div>
     </main>
 
-    <!-- CELSTOMP PANEL -->
+    
     <div id="floatingIsland" class="islandDock">
       <div class="islandHeader" id="floatingIslandHeader">
         <div class="islandTitle">CELSTOMP</div>
@@ -173,13 +172,19 @@
 
                 <input id="tool-lassoErase" data-tool="lasso-erase" name="tool" type="radio" value="lasso-erase" />
                 <label for="tool-lassoErase" data-tool="lasso-erase">Lasso Erase</label>
+
+                <input id="tool-rectSelect" data-tool="rect-select" name="tool" type="radio" value="rect-select" />
+                <label for="tool-rectSelect" data-tool="rect-select">Rect Select</label>
+
+                <input id="tool-eyedropper" data-tool="eyedropper" name="tool" type="radio" value="eyedropper" />
+                <label for="tool-eyedropper" data-tool="eyedropper">Eyedropper</label>
               </div>
       
           </div>
         
         </div>
         <div class="islandPanel" id="islandLayersSlot">
-          <!-- Layers -->
+          
           <div class="seg" id="layerSeg" role="tablist" aria-label="Layers">
 
             <input checked id="bt-line" name="btype" type="radio" value="line" />
@@ -230,6 +235,8 @@
 
           <button id="saveProj">Save</button>
           <button id="loadProj">Load</button>
+          <button id="pickColorTool">Pick Color Tool</button>
+          <button id="addPaletteColor">Add Color</button>
           <button id="fillCurrent">Fill current cel</button>
           <button id="fillAll">Fill all cels</button>
       
@@ -242,14 +249,15 @@
 
         </div>
 
+        <div id="paletteBar" class="paletteBar" aria-label="Saved colors"></div>
+
         <div class="islandSideRow">
-         <!-- <button id="exportWebM">Export WebM (clip)</button>
-          -->
+         
         </div>
       </div>
     </div>
 
-    <!-- TIMELINE -->
+    
     <section id="timeline">
       <div id="timelineHeader">
 
@@ -263,7 +271,7 @@
           <span class="badge">Loop <input id="loopToggle" type="checkbox" checked style="vertical-align:middle; margin-left:6px;" /></span>
         </div>
 
-        <!-- NOTE: only ONE set of tlPrevCel/tlNextCel IDs now -->
+        
         <div class="center" id="tlHeaderCenter">
           <button id="tlPrevCel">◀︎ Cel</button>
           <button id="tlPrevFrame">◀︎ Frame</button>
@@ -300,10 +308,7 @@
         <table id="timelineTable" aria-label="Timeline grid"></table>
       </div>
     </section>
-<!--
-    <button id="showLeftEdge" class="edge-btn">Show Sidebar</button>
-    <button id="showRightEdge" class="edge-btn">Show Colors &amp; Tools</button>
-    -->
+
     
     <button id="showTimelineEdge" class="edge-btn">Show Timeline</button>
 
@@ -312,7 +317,7 @@
   </div>
 
 
-  <!-- Hidden bridge toggles  -->
+  
   <div id="hiddenToggles" style="display:none">
     <button id="toggleOnion" type="button">Onion: Off</button>
  
@@ -330,14 +335,14 @@
         accept=".json,application/json"
         style="position:fixed; left:-9999px; width:1px; height:1px; opacity:0;" />
 
-  <!-- JS -->
+  
 
 
   
   <script src="./celstomp-app.js"></script>
 
 
-  <!-- Onion options -->
+  
   <div id="onionOptionsStash" aria-hidden="true">
     <div id="onionOptionsBlock">
       <div class="subhead">Onion Options</div>
